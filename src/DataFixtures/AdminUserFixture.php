@@ -18,7 +18,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
  */
 class AdminUserFixture extends Fixture implements FixtureGroupInterface
 {
-    public const ADMIN_EMAIL = 'admin@pethome.local';
+    public const ADMIN_EMAIL = 'admin@homepet.local';
     public const ADMIN_PASSWORD = 'P3tH0m3@Adm1n!2026';
     public const ADMIN_REFERENCE = 'admin-user';
 
@@ -32,7 +32,7 @@ class AdminUserFixture extends Fixture implements FixtureGroupInterface
         $admin = new User();
         $admin->setEmail(self::ADMIN_EMAIL);
         $admin->setFirstName('Admin');
-        $admin->setLastName('PetHome');
+        $admin->setLastName('HomePet');
         $admin->setPhone('+39 000 0000000');
         $admin->setStatus(AccountStatus::ACTIVE);
         $admin->setEmailVerifiedAt(new DateTimeImmutable('now', new \DateTimeZone('UTC')));

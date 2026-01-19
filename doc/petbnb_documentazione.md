@@ -217,7 +217,7 @@ Roadmap “da grandi”:
 ### 11.2 Proposte naming (multi‑pet e future‑proof)
 **Opzione A (diretta, familiare):**
 - PetBnB
-- PetHome / PetHome Stay
+- HomePet / HomePet Stay
 - CasaPet
 
 **Opzione B (brandabile, trust‑first):**
