@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetBnB - Premium Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2280c3",
+                        "background-light": "#f6f5f3",
+                        "background-dark": "#22262a",
+                        "secondary-coral": "#F2A093",
+                        "secondary-sage": "#9FCC9F",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft-xl': '0 20px 40px -10px rgba(0, 0, 0, 0.05)',
+                        'soft-lg': '0 10px 25px -5px rgba(0, 0, 0, 0.04)',
+                        'inner-white': 'inset 0 0 0 1px rgba(255, 255, 255, 0.4)'
+                    },
+                    letterSpacing: {
+                        'editorial': '0.05em'
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dce1e5; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b0b8c1; 
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#2D2D2D] dark:text-[#f0f3f4] overflow-x-hidden antialiased">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<div class="glass-panel mx-auto max-w-[1440px] mt-4 mx-4 md:mx-10 rounded-2xl px-6 py-4 shadow-soft-lg">
+<div class="flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3 text-primary">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined !text-[24px]">pets</span>
+</div>
+<h2 class="text-[#121517] dark:text-white text-xl font-extrabold tracking-tight">PetBnB</h2>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-10">
+<a class="text-[#121517] dark:text-white text-sm font-semibold tracking-wide hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-[#121517] dark:text-white text-sm font-semibold tracking-wide hover:text-primary transition-colors" href="#">Hosts</a>
+<a class="text-[#121517] dark:text-white text-sm font-semibold tracking-wide hover:text-primary transition-colors" href="#">Community</a>
+</div>
+<!-- Auth Buttons -->
+<div class="flex gap-3">
+<button class="hidden sm:flex h-10 px-5 items-center justify-center rounded-full bg-white dark:bg-white/10 text-[#121517] dark:text-white text-sm font-bold tracking-wide shadow-sm hover:bg-gray-50 dark:hover:bg-white/20 transition-all border border-transparent hover:border-gray-200">
+                        Sign In
+                    </button>
+<button class="h-10 px-6 flex items-center justify-center rounded-full bg-primary text-white text-sm font-bold tracking-wide shadow-md hover:bg-primary/90 transition-all hover:shadow-lg hover:-translate-y-0.5">
+                        Become a Host
+                    </button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+<!-- Background Video/Image Placeholder -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Golden retriever running happily in a sunlit grassy field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJXv0sN8iasyPyT2CcE58Uo1Wcdw3FLd89Q_ODDCSvTNz9GB_BnnRPQqQadbf1z_gp5yz7z1_47zIIFjMqGXDtguYtca4Cx-Kut_XOhWQwKPJa2vYq9dyAuCpw87Pz_HRfmuTkj0f2iJE5REYrjMFLBfonQWHCRxOqYHtj9zCAb_qxLRS-TjCfYrnyQTbIgkQFEOzgLMOs-WKtgkIz_-NMmPFXlyID8acuUPScybis73k9SWc8drB9v8BSXSLrsiBIXpkHYtVo1Pet');"></div>
+<!-- Overlay for legibility -->
+<div class="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-background-light dark:to-background-dark"></div>
+</div>
+<div class="relative z-10 w-full max-w-4xl px-4 flex flex-col items-center text-center mt-20">
+<div class="glass-panel p-10 md:p-14 rounded-3xl shadow-soft-xl max-w-3xl w-full animate-fade-in-up">
+<h1 class="text-[#121517] dark:text-white text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight mb-4">
+                    Peace of Mind <br/>for <span class="text-primary italic">Every Pet</span>
+</h1>
+<p class="text-[#657886] dark:text-gray-300 text-lg md:text-xl font-medium leading-relaxed mb-8 max-w-xl mx-auto">
+                    Trusted, local sitters for your furry family. Experience premium care handled with love.
+                </p>
+<!-- Search Component -->
+<div class="bg-white dark:bg-[#32363b] p-2 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row items-center gap-2">
+<div class="flex-1 flex items-center px-4 h-12 md:h-14 border-b md:border-b-0 md:border-r border-gray-100 dark:border-gray-700 w-full">
+<span class="material-symbols-outlined text-gray-400 mr-3">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-[#121517] dark:text-white placeholder-gray-400 font-medium" placeholder="Location" type="text"/>
+</div>
+<div class="flex-1 flex items-center px-4 h-12 md:h-14 w-full">
+<span class="material-symbols-outlined text-gray-400 mr-3">calendar_month</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-[#121517] dark:text-white placeholder-gray-400 font-medium" placeholder="Dates" type="text"/>
+</div>
+<button class="w-full md:w-auto h-12 md:h-14 px-8 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-lg shadow-md transition-all flex items-center justify-center gap-2">
+                        Search
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Services Section -->
+<section class="py-24 px-4 md:px-10 bg-background-light dark:bg-background-dark relative overflow-hidden">
+<!-- Decorative subtle gradient blob -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-secondary-coral/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto relative z-10">
+<div class="text-center mb-16">
+<span class="text-secondary-coral font-bold tracking-widest uppercase text-xs mb-3 block">Premium Care</span>
+<h2 class="text-3xl md:text-5xl font-extrabold text-[#121517] dark:text-white tracking-tight mb-6">Our Multi-Pet Services</h2>
+<p class="text-[#657886] dark:text-gray-400 text-lg max-w-2xl mx-auto">Professional care for every member of your family, tailored to their unique personality and needs.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service Card 1 -->
+<div class="group bg-white dark:bg-[#2a2e33] p-8 rounded-2xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined !text-[32px]">cottage</span>
+</div>
+<h3 class="text-xl font-bold text-[#121517] dark:text-white mb-2">Pet Boarding</h3>
+<p class="text-[#657886] dark:text-gray-400 text-sm leading-relaxed">Comfortable overnight stays in a sitter's loving home environment.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="group bg-white dark:bg-[#2a2e33] p-8 rounded-2xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="w-16 h-16 rounded-2xl bg-secondary-sage/20 text-green-700 dark:text-green-300 flex items-center justify-center mb-6 group-hover:bg-secondary-sage group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined !text-[32px]">vpn_key</span>
+</div>
+<h3 class="text-xl font-bold text-[#121517] dark:text-white mb-2">House Sitting</h3>
+<p class="text-[#657886] dark:text-gray-400 text-sm leading-relaxed">Great care in your own home. Perfect for pets who prefer familiar surroundings.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="group bg-white dark:bg-[#2a2e33] p-8 rounded-2xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="w-16 h-16 rounded-2xl bg-secondary-coral/20 text-red-700 dark:text-red-300 flex items-center justify-center mb-6 group-hover:bg-secondary-coral group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined !text-[32px]">directions_walk</span>
+</div>
+<h3 class="text-xl font-bold text-[#121517] dark:text-white mb-2">Dog Walking</h3>
+<p class="text-[#657886] dark:text-gray-400 text-sm leading-relaxed">Daily walks and adventures to keep your dog healthy and happy.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="group bg-white dark:bg-[#2a2e33] p-8 rounded-2xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 flex items-center justify-center mb-6 group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined !text-[32px]">content_cut</span>
+</div>
+<h3 class="text-xl font-bold text-[#121517] dark:text-white mb-2">Grooming</h3>
+<p class="text-[#657886] dark:text-gray-400 text-sm leading-relaxed">Spas and trims for your pet. Professional grooming services at home.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Preview Section -->
+<section class="py-12 px-4 md:px-10">
+<div class="max-w-[1200px] mx-auto bg-white dark:bg-[#2a2e33] rounded-[2rem] p-4 shadow-soft-lg overflow-hidden relative group">
+<div class="absolute top-8 left-8 z-20 glass-panel px-6 py-4 rounded-xl max-w-sm hidden md:block">
+<h2 class="text-2xl font-bold text-[#121517] dark:text-white tracking-tight mb-1">Find peace near you</h2>
+<p class="text-sm text-[#657886] dark:text-gray-400">Discover trusted hosts in your neighborhood.</p>
+</div>
+<div class="w-full h-[500px] rounded-3xl overflow-hidden relative">
+<!-- Map Background Image -->
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Stylized map view of a city with location pins" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIghgw8pkUhKqbGMGKt7QL7RNwE2aQa8Skpe_Y5Cg_Y0xJnOa3nMt_EsDV9VjFyn2AareuVtl45uV-t99LrqNw8AfphsTFuDUMn1Pn0ZrRYnNZ-5aBIEYfydvH7hECA6cqKbOPi1wgsdiJXVWelietRMKCOi23QQyZfYG0uqSTbLs2Uk5bp3GcDD5iptoz-KPgpBSZN1EG0op5EvXXVS75eWBIOcHYnGXUcI4zAgFilUr8kr2uEVY2BoNR-G0SsWs8996yWXaWL4Lm');">
+</div>
+<!-- Map Pins Simulation -->
+<div class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2">
+<div class="relative group/pin">
+<div class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary transform transition-transform group-hover/pin:scale-110 cursor-pointer">
+<span class="material-symbols-outlined">person_pin_circle</span>
+</div>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-800 text-xs font-bold py-1 px-3 rounded-lg shadow-md opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap">
+                            Sara M. • 0.2mi
+                        </div>
+</div>
+</div>
+<div class="absolute top-1/3 right-1/4">
+<div class="w-10 h-10 bg-white/90 rounded-full shadow-lg flex items-center justify-center text-secondary-coral cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">pets</span>
+</div>
+</div>
+<!-- Explore Button Overlay -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+<button class="glass-panel px-8 py-3 rounded-full text-[#121517] dark:text-white font-bold text-sm shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">map</span>
+                        Explore Live Map
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Community Grid -->
+<section class="py-24 px-4 md:px-10 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Community</span>
+<h2 class="text-3xl md:text-5xl font-extrabold text-[#121517] dark:text-white tracking-tight">Life at PetBnB</h2>
+</div>
+<div class="flex gap-4">
+<a class="text-[#121517] dark:text-white font-bold border-b-2 border-primary pb-1" href="#">@PetBnB_Official</a>
+<p class="text-[#657886] dark:text-gray-400">Join our community of happy pets.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[200px] md:auto-rows-[280px]">
+<!-- Item 1: Large square -->
+<div class="row-span-2 col-span-2 md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-2xl">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Bulldog portrait with soft lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAd2JMzxW67D0S1S1C6mW9HlymSfO7ydj2uQDroJmXJQxRd0oOwjFyKfPPKcfWBUPrG7yQsrJ1eW2D8gleBNcbwkL_xJWMmtOTHKDbH8f4c9jAVskzfSo4XYdEpsM2_xJmWL08v2xRVxIiKOwqBcUDv18cy_-Qh0y4mPgKx9VuBhQhsyH3mBFBpoCUx8nGbJnSKusLzm9dENwav-XlPQVZKkdvTwXm7wlCLAWF8gPNIGKFn2OBTVEoFDIKbM2G93oLH2lj9uYKR6rdH');"></div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+</div>
+<!-- Item 2 -->
+<div class="relative group overflow-hidden rounded-2xl">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Cat looking out a window with warm light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWMt-oc7QrQ-G3YHIgP8MkTOqfqso5VFhNnY-lqcIra4yogGZTwr5idDF9cF9C-g-ACOnuPWW3okV-3BXfN4By0goJWq3Y6ieoj19goSqDAQmhhezGEM1IVdyxcIO-eoeo8gzMQBDE0XV3qmSQz5_HDliAYA2U0jhf_g5R3zwkmzDBdiUchysjPsfKeWJUqBiph2tb-A0cVwhGAoEbkJnxYiltpVS8acvR1BYF16ZxEq5E5AhrQjKUlTZRdphlQz-JGKmVMgTajK00');"></div>
+</div>
+<!-- Item 3 -->
+<div class="relative group overflow-hidden rounded-2xl">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Dog running on the beach" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYl-6NR0WMRIKTu506pkqRwg84ydYI69awHLOJ2uiIb9TD-IwMQGDyZ8MaNzUDZzQaeJxV_7YQHbZxDoTyJeymnZL8ReWMjz6OSukh9PRdpIvmlU7jQXkhogpVvWDoZcZaoKt3redXL9fD5I79RnrRJIAd-xK8lVrKIxe0INbLorZX6sPnRn3IpdxXvRatDVyuKv9EGjcPETZEMguFFw5gnv3f88pyiRmv7rpAJshckY71lbn5H-Z6OmzTPq2YvE9WCytLCDeRDky8');"></div>
+</div>
+<!-- Item 4: Wide on mobile, normal on desktop -->
+<div class="col-span-2 md:col-span-1 relative group overflow-hidden rounded-2xl">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Two puppies playing together in grass" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPVsRUk6cZY8KP7rTX57FppbSLeDEU0hs-wghLgNdkXhP3MWrhTpHOlN9KUGuCJXmpE8poEB_5mdCP29ZmyFBU7slJGJOJ8Afs8CqnxmsL6LBi9LDmu6AS281bP4Y3gbWXdvrK9_zWhhvKro-fexuz8EpYM3lFs-FZ0k7MQxUVDBHz7iHZkftwFun4vwuTel9so6TcJ7if9b8pk4-OVCNnry47rvux2YevXDzesKVauekyW-HkEZyzHTYP10B1z-KkI-liejH4gA_R');"></div>
+</div>
+<!-- Item 5 -->
+<div class="relative group overflow-hidden rounded-2xl">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a cat's face with bright green eyes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6YzIelZpSQWKwK3-S7bzUGyqaSnpeEUjmKqUIJrwU4vgGL4jDR37bP7fRtik0_ygiWLq-2Pi087Z8Vk01E3MkraeARianDoW3e4oZcV5ffWhaFCrAcYxC32SN_5vuxRRUWAz7Gmdnd--Q6e_Ceg0VfwjLxNSzpvR14R7Hppv8kz8RPoEExw-hOGZp2fMHmf2bkA-mdlhnzXHRjcM3k3mIo1mESs34rB-X-AefmiJn1uAZov5uHVnnMC9416trgosz-pEd3Wp7ByJq');"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Slider / Footer CTA -->
+<section class="py-20 px-4 relative overflow-hidden bg-secondary-coral/5 dark:bg-secondary-coral/10">
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<span class="material-symbols-outlined text-4xl text-secondary-coral mb-6">format_quote</span>
+<h3 class="text-2xl md:text-4xl font-semibold italic text-[#121517] dark:text-white leading-relaxed mb-8">
+                "PetBnB transformed how we travel. Knowing Max is with a real family instead of a kennel gives us complete peace of mind."
+             </h3>
+<div class="flex items-center justify-center gap-4">
+<div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-csCpQT63htCSHTa6pgnTdRev4AwGEDNGsbdls67RYZK0LFwwDSgGtZVvGnXU4yXwiYeWZ3PxE0iXNUzXr2zlzUNTz8b1yhmP0lARGKrch_pz6gukOUEfdIFfxkWP6pWYwhqr8lHCmUjrA-cm2wcdFVYo1SlRjcNNu_jbY0qBpTkLGP0vn9bubyAQscCy6MGwTyYU0De0_RtAwkulKbYYQ6XSzjq0YCEOn_0IHBULxtOwQDNIR1xCZmf0CeKa2xfw2Q3YFE6KV9nJ"/>
+</div>
+<div class="text-left">
+<p class="font-bold text-[#121517] dark:text-white">Elena Richards</p>
+<p class="text-sm text-[#657886] dark:text-gray-400">Owner of Max, Golden Retriever</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a1d21] pt-16 pb-8 border-t border-gray-100 dark:border-gray-800">
+<div class="max-w-[1200px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-4">
+<span class="material-symbols-outlined">pets</span>
+<h2 class="text-[#121517] dark:text-white text-lg font-extrabold">PetBnB</h2>
+</div>
+<p class="text-[#657886] dark:text-gray-400 text-sm mb-4">Making life easier for pets and their people.</p>
+</div>
+<div>
+<h4 class="font-bold text-[#121517] dark:text-white mb-4">Learn More</h4>
+<ul class="space-y-2 text-sm text-[#657886] dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Jobs</a></li>
+<li><a class="hover:text-primary" href="#">Press</a></li>
+<li><a class="hover:text-primary" href="#">Trust &amp; Safety</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#121517] dark:text-white mb-4">Services</h4>
+<ul class="space-y-2 text-sm text-[#657886] dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Pet Sitting</a></li>
+<li><a class="hover:text-primary" href="#">Dog Walking</a></li>
+<li><a class="hover:text-primary" href="#">Pet Grooming</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#121517] dark:text-white mb-4">Support</h4>
+<ul class="space-y-2 text-sm text-[#657886] dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Safety Center</a></li>
+<li><a class="hover:text-primary" href="#">Community Guidelines</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-[#657886] dark:text-gray-500">© 2023 PetBnB, Inc. All rights reserved.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="text-[#657886] hover:text-primary" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="text-[#657886] hover:text-primary" href="#"><span class="material-symbols-outlined text-lg">camera_alt</span></a>
+<a class="text-[#657886] hover:text-primary" href="#"><span class="material-symbols-outlined text-lg">chat_bubble</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
